@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "MontassarBenIsmail",
+    "slug": "MontassarBenIsmail",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.monta28.MontassarBenIsmail"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "18575dfa-b6cb-4bf9-9db1-3d1edf0b1828"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
