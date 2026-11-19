@@ -1,52 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={{
-        borderWidth:1,
-        width:"98%",
-        alignItems:"center",
-        justifyContent:"center",
-        borderWidth:1,
-        borderRadius:10
-        }}>
-        <Text 
-          style={{ 
-          fontWeight: "bold",
-          fontSize:32,
-          color:"rgb(25,78,78)",
-          backgroundColor:"red",
-          width:"100%",
-          textAlign:"center",
-       }}>
-        Bienvenue
-        </Text>
-        <TextInput placeholder="Email@site.com" style={styles.inputStyle} inputMode="email"></TextInput>
-        <TextInput placeholder="*************" secureTextEntry={true} style={styles.inputStyle}></TextInput>
+import { NavigationContainer } from '@react-navigation/native';
+import SignUp from './Screens/SignUp';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Auth from './Screens/Auth';
+import Home from './Screens/Home';
 
-        <Button title="Submit" color={"green"}></Button>
-        <Button title="Exit" color={"green"}></Button>
-        <Text>Créer nouveau compte</Text>
-        </View>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack=createNativeStackNavigator();
+
+export default function App(){
+  return( 
+  <NavigationContainer>
+    <Stack.Navigator screenOptions={{headerShown:true}}>
+      <Stack.Screen component={Auth} name="Auth"></Stack.Screen>
+      <Stack.Screen component={SignUp} name="SignUp"></Stack.Screen>
+      <Stack.Screen component={Home} name="Home"></Stack.Screen>
+    </Stack.Navigator>
+  </NavigationContainer> );
 }
-
-const styles = StyleSheet.create({
-  inputStyle:{
-    width:"80%",
-    height:45,
-    borderWidth:1,
-    borderRadius:8,
-    margin:3
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: "center", //align horizontal
-    justifyContent: "center",//align vertical
-  },
-});
